@@ -8,17 +8,17 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {};
-    },
+export default {
+  data() {
+    return {};
+  },
 
-    props: {
-      text: String,
-      backgroundColor: String,
-      textColor: String
-    }
-  };
+  props: {
+    text: String,
+    backgroundColor: String,
+    textColor: String,
+  },
+};
 </script>
 
 <style></style>

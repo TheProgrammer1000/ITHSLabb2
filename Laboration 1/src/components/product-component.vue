@@ -9,26 +9,26 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {};
-    },
+export default {
+  data() {
+    return {};
+  },
 
-    mounted() {
-      this.ShowQuanity();
-    },
+  mounted() {
+    this.ShowQuanity();
+  },
 
-    emits: ['deltask'],
+  emits: ["deltask"],
 
-    methods: {
-      ShowQuanity() {}
-    },
+  methods: {
+    ShowQuanity() {},
+  },
 
-    props: {
-      product: Object,
-      orderList: Object
-    }
-  };
+  props: {
+    product: Object,
+    orderList: Object,
+  },
+};
 </script>
 
 <style></style>

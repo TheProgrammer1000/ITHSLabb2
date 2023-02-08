@@ -1,9 +1,10 @@
 <template>
-  <Button>
-    :text="'AddProduct'" :backgroundColor="'brown'" :text-color="'white'"
-    @click="showForm" ></Button
-  >
-
+  <Button
+    :text="'AddProduct'"
+    :backgroundColor="'brown'"
+    :text-color="'white'"
+    @click="showForm"
+  />
   <div v-if="showAddProduct">
     <form @submit="onSubmit" class="add-form">
       <div class="form-control">

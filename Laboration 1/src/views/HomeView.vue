@@ -4,6 +4,8 @@
       <AddProduct @addedproduct="AddProduct"></AddProduct>
       <input @click="DataToPage()" type="button" value="Cart" />
     </header>
+    <h2>How many items you've bought {{ this.$store.state.sales }}</h2>
+
     <ShowQuanity :orderList="this.orderList"></ShowQuanity>
     <div class="product-container">
       <Products
@@ -21,6 +23,7 @@ import Products from "../components/products-component.vue";
 import AddProduct from "../components/AddProduct.vue";
 import router from "../router/index.js";
 import ShowQuanity from "../components/ShowQuantity.vue";
+import axios from "axios";
 
 export default {
   name: "HomeView",
@@ -67,8 +70,11 @@ export default {
   },
   methods: {
     async GetAllCoffe() {
-      let response = await fetch("https://api.sampleapis.com/coffee/hot");
-      let data = await response.json();
+      let reponse = await axios.get("https://api.sampleapis.com/coffee/hot");
+      console.log("resopnse: ", reponse.data);
+
+      // let response = await fetch("https://api.sampleapis.com/coffee/hot");
+      let data = await reponse.data;
       return data;
     },
     deltasks(id) {

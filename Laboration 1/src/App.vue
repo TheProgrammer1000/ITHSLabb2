@@ -2,7 +2,9 @@
   <nav>
     <ul>
       <router-link to="/"><h2>Hem</h2></router-link>
-      <router-link to="/about/40"><h2>About</h2></router-link>
+      <router-link :to="'/about/' + this.$store.state.sales"
+        ><h2>About</h2></router-link
+      >
     </ul>
   </nav>
   <router-view />

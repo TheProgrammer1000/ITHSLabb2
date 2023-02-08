@@ -18,18 +18,6 @@ export default {
       order: Array,
     };
   },
-
-  watch: {
-    // orderList: {
-    //   deep: true,
-    //   handler() {
-    //     this.order = this.orderList
-    //     console.log(this.order)
-    //   }
-    // }
-  },
-
-  created() {},
 };
 </script>
 

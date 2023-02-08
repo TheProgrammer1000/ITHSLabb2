@@ -35,10 +35,6 @@ export default {
     return {};
   },
 
-  mounted() {
-    // this.text()
-  },
-
   methods: {
     deltask(id) {
       this.$emit("deltask", id);
