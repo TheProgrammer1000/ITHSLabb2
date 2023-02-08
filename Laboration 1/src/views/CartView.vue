@@ -45,7 +45,6 @@ export default {
       deep: true,
       handler() {
         localStorage.setItem("orderList", JSON.stringify(this.orderFinal));
-        console.log(JSON.parse(localStorage.getItem("orderList")));
       },
     },
   },
@@ -53,7 +52,6 @@ export default {
   methods: {
     GetOrder() {
       this.orderFinal = JSON.parse(localStorage.getItem("orderList"));
-      console.log(`${this.orderFinal}`);
     },
     deltasks(id) {
       this.ReduceOrder(id);
@@ -79,7 +77,6 @@ export default {
       }
     },
     Buy() {
-      console.log("Köpt!");
       if (this.orderFinal !== null && this.orderFinal.length > 0) {
         this.bought = true;
         this.$store.commit("Sold");
@@ -96,15 +93,12 @@ export default {
               this.orderFinal = this.orderFinal.filter(
                 (element) => element.quantity !== 0
               );
-
-              console.log(this.orderFinal);
             }
             break;
           } else if (
             this.orderFinal[i].id !== id &&
             i === this.orderFinal.length - 1
           ) {
-            console.log(this.orderFinal[i].id === id);
             alert("Tomt, quantity = 0");
             break;
           }

@@ -6,10 +6,17 @@
     </header>
     <h2>How many items you've bought {{ this.$store.state.sales }}</h2>
 
+    <h3 style="margin-left: 40vw">Search</h3>
+    <input
+      type="text"
+      v-model="searchInput"
+      placeholder="Search..."
+      style="margin-left: 40vw"
+    />
     <ShowQuanity :orderList="this.orderList"></ShowQuanity>
     <div class="product-container">
       <Products
-        :productAllList="this.productList"
+        :productAllList="productFiltered"
         @addedToOrder="AddOrder"
         @deltask="deltasks"
         :orderList="this.orderList"
@@ -39,10 +46,19 @@ export default {
       productList: [],
       orderList: [],
       quantity: 0,
+      searchInput: "",
     };
   },
 
   props: {},
+
+  computed: {
+    productFiltered() {
+      return this.productList.filter((product) =>
+        product.title.toLowerCase().includes(this.searchInput.toLowerCase())
+      );
+    },
+  },
 
   mounted() {
     let orderlistFinal = JSON.parse(localStorage.getItem("orderList"));
