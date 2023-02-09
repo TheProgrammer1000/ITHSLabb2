@@ -182,7 +182,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  margin: 0 4vw;
+  margin: 0 10vw;
   height: 120vh;
   margin-top: 10vh;
 }

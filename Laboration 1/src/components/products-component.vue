@@ -1,10 +1,7 @@
 <template>
   <div
     v-for="product in this.productAllList"
-    :style="{
-      'background-image': 'url(' + product.image + ')',
-      backgroundSize: 'cover',
-    }"
+    :style="{ 'background-image': 'url(' + product.image + ')' }"
     :key="product.id"
     class="product-item"
   >
@@ -51,4 +48,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.product-item {
+  background-position: center;
+  background-size: cover;
+  margin-right: 5vw;
+  margin-bottom: 5vh;
+}
+</style>

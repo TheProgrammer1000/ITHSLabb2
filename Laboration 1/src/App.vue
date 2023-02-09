@@ -1,11 +1,31 @@
 <template>
-  <nav>
-    <ul>
-      <router-link to="/"><h2>Hem</h2></router-link>
-      <router-link :to="'/about/' + this.$store.state.sales"
-        ><h2>About</h2></router-link
-      >
-    </ul>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Dennis Café</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <router-link class="nav-link" to="/">Hem</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link
+            class="nav-link"
+            :to="'/about/' + this.$store.state.sales"
+            >About</router-link
+          >
+        </li>
+      </ul>
+    </div>
   </nav>
   <router-view />
 </template>
@@ -30,34 +50,7 @@ export default {
 </script>
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body,
-html {
-  /* background-color: #faf5e4; */
-  background-color: #f6feaa;
-}
-
-nav ul {
-  display: flex;
-  justify-content: space-around;
-  background-color: #a77c19;
-  height: 8vh;
-  list-style: none;
-}
-
-nav a {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-nav a.router-link-exact-active {
-  color: rgb(128, 126, 126);
+nav {
+  margin-bottom: 20vh;
 }
 </style>

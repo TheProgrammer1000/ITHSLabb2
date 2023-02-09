@@ -1,10 +1,5 @@
 <template>
-  <Button
-    :text="'AddProduct'"
-    :backgroundColor="'brown'"
-    :text-color="'white'"
-    @click="showForm"
-  />
+  <Button :text="'AddProduct'" @click="showForm" />
   <div v-if="showAddProduct">
     <form @submit="onSubmit" class="add-form">
       <div class="form-control">
@@ -16,7 +11,7 @@
         type="button"
         @click="$emit('addedproduct', text)"
         value="Save Product"
-        class="btn btn-block"
+        class="btn btn-success"
       />
     </form>
   </div>
